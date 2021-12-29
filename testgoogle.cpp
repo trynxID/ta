@@ -2,7 +2,7 @@
 #include <string.h>
 using namespace std;
 int main(){
-    int pm,pb;
+    int pm,pb,x;
     string pass;
     char loop = 'y';
     string buku[3];
@@ -22,41 +22,49 @@ int main(){
     if (pm==1)
     {
         beli:
-        cout<<"===========================================\n";
-        cout<<"=             Pembelian Buku              =\n";
-        cout<<"===========================================\n";
-        cout<<" Daftar Buku\t\tHarga\n";
-        for (int i=0;i<3;i++){
-            cout<<" "<<i+1<<". "<<buku[i]<<"\t\t\t"<<harga[i]<<endl;
-        }
-        cout<<"===========================================\n";
-        cout<<"Masukan Pilihan Buku : ";cin>>pb;
-        if (pb==1){
-            cout<<buku[0]<<endl;
-            cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[0];
-            cout<<"===========================================\n";
-            th[0]=harga[0]*tb[0];
-            int j=1;
-            a[0]=j;
-        }else if (pb==2){
-            cout<<buku[1]<<endl;
-            cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[1];
-            cout<<"===========================================\n";
-            th[1]=harga[1]*tb[1];
-            int j=1;
-            a[1]=j;
-        }else if (pb==3){
-            cout<<buku[2]<<endl;
-            cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[2];
-            cout<<"===========================================\n";
-            th[2]=harga[2]*tb[2];
-            int j=1;
-            a[2]=j;
-        }else{
-            cout<<"Pilihan Tidak ada\n";
+        if(x!=1){
+            cout<<"Menu Buku Kosong!\n";
+            cout<<"Silahkan Isi Terlebih Dahulu!\n\n";
             system("pause");
             system("cls");
-            goto beli;
+            goto menu_utama;
+        }else{
+            cout<<"===========================================\n";
+            cout<<"=             Pembelian Buku              =\n";
+            cout<<"===========================================\n";
+            cout<<" Daftar Buku\t\t   Harga\n";
+            for (int i=0;i<3;i++){
+                cout<<" "<<i+1<<". "<<buku[i]<<"\t\t"<<harga[i]<<endl;
+            }
+            cout<<"===========================================\n";
+            cout<<"Masukan Pilihan Buku : ";cin>>pb;
+            if (pb==1){
+                cout<<buku[0]<<endl;
+                cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[0];
+                cout<<"===========================================\n";
+                th[0]=harga[0]*tb[0];
+                int j=1;
+                a[0]=j;
+            }else if (pb==2){
+                cout<<buku[1]<<endl;
+                cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[1];
+                cout<<"===========================================\n";
+                th[1]=harga[1]*tb[1];
+                int j=1;
+                a[1]=j;
+            }else if (pb==3){
+                cout<<buku[2]<<endl;
+                cout<<"Jumlah Buku Yang Akan Dibeli : ";cin>>tb[2];
+                cout<<"===========================================\n";
+                th[2]=harga[2]*tb[2];
+                int j=1;
+                a[2]=j;
+            }else{
+                cout<<"Pilihan Tidak ada\n";
+                system("pause");
+                system("cls");
+                goto beli;
+            }
         }
     }
     else if (pm==2)
@@ -73,6 +81,7 @@ int main(){
             }
             system("cls");
             cout<<"Pengisian Buku Berhasil!\n";
+            x=1;
             system("pause");
             system("cls");
             goto menu_utama;
