@@ -36,6 +36,7 @@ int main(){
             for (int i=0;i<3;i++){
                 cout<<" "<<i+1<<". "<<buku[i]<<"\t\t"<<harga[i]<<endl;
             }
+            cout<<" 0. Kembali Ke Menu Sebelumnya\n";
             cout<<"===========================================\n";
             cout<<"Masukan Pilihan Buku : ";cin>>pb;
             if (pb==1){
@@ -59,6 +60,9 @@ int main(){
                 th[2]=harga[2]*tb[2];
                 int j=1;
                 a[2]=j;
+            }else if (pb==0){
+                system("cls");
+                goto menu_utama;
             }else{
                 cout<<"Pilihan Tidak ada\n";
                 system("pause");
